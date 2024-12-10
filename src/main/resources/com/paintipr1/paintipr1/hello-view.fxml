@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane fx:id="splitPane" dividerPositions="0.7436224489795918" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.paintipr1.paintipr1.HelloController">
+   <items>
+      <Pane fx:id="drawingPane" onMouseClicked="#paneClickListener" prefHeight="200.0" prefWidth="200.0" />
+      <VBox prefHeight="398.0" prefWidth="137.0">
+         <children>
+            <ChoiceBox fx:id="shapesBox" onAction="#shapesBoxChooseShape" prefWidth="150.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="20.0" top="30.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <VBox>
+               <children>
+                  <Text fx:id="text1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+                     <VBox.margin>
+                        <Insets left="65.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="textField1" maxWidth="150.0" minWidth="10.0" visible="false" />
+                  <Text fx:id="text2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+                     <VBox.margin>
+                        <Insets left="65.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="textField2" maxWidth="150.0" minWidth="10.0" visible="false" />
+                  <Text fx:id="text3" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+                     <VBox.margin>
+                        <Insets left="65.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="textField3" maxWidth="150.0" minWidth="10.0" visible="false" />
+                  <Text fx:id="text4" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+                     <VBox.margin>
+                        <Insets left="65.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="textField4" maxWidth="150.0" minWidth="10.0" visible="false" />
+                  <Text fx:id="text5" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false">
+                     <VBox.margin>
+                        <Insets left="65.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="textField5" maxWidth="150.0" minWidth="10.0" visible="false" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox prefHeight="110.0" prefWidth="198.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="x">
+                     <VBox.margin>
+                        <Insets left="96.0" right="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="textFieldMoveX">
+                     <VBox.margin>
+                        <Insets left="60.0" right="60.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="y">
+                     <VBox.margin>
+                        <Insets left="96.0" right="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="textFieldMoveY">
+                     <VBox.margin>
+                        <Insets left="60.0" right="60.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="moveButton" mnemonicParsing="false" onAction="#moveButtonClicked" text="Move">
+                     <VBox.margin>
+                        <Insets left="75.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <Text fx:id="debugText" fill="#0a0a0a" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter data" visible="false">
+               <VBox.margin>
+                  <Insets left="50.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <MenuBar>
+              <menus>
+                  <Menu mnemonicParsing="false" text="Save">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#saveToXMLButton" text="Save to file" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Load">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#loadFromXMLButton" text="Load from file" />
+                     </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Delete selected">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#deleteSelectedShape" text="Delete selected figure" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <TextArea fx:id="scriptArea" prefHeight="200.0" prefWidth="200.0" promptText="Enter the script language object" />
+            <Button mnemonicParsing="false" onAction="#scriptButtonClicked" text="Enter">
+               <VBox.margin>
+                  <Insets left="75.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </items>
+</SplitPane>
